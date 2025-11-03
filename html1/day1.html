@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- META : 검색엔진에 잘 작동 하려면 설정해줘야함 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANDOO</title>
+    <style>
+        /* CSS 작성 */
+    </style>
+    <script>
+        // 자바 스크립트 작성
+    </script>
+</head>
+<body>
+    <!-- id는 독립적이게 적용 / class는 공통으로 적용가능 -->
+    <!-- h1~h6까지 있음 숫자가 작을 수록 중요함 / 제목을 나타냄 -->
+    <h1 id="hello-world-h1" class="hello">Hello World</h1>
+    <p class="hello">안녕 만두!</p>
+    <img src="mandoo.png" width="100" height="100">
+    <!-- 주석 바로생성 컨트롤 + / -->
+
+
+    <!-- 강조하고 싶을때 사용 / 시맨틱 태그 -->
+    <!-- 의미로도 중요하기 때문에 bold 처리 -->
+    <strong></strong>
+    <!-- 디자인으로만 bold처리 -->
+    <b></b>
+
+    <!-- 의미는 없지만 디자인 처리 -->
+    <span></span>
+
+    <!-- 이텔릭체처리 -->
+    <!-- 더 중요하다라는 의미가지고 있음 -->
+    <em></em>
+    <!-- 단순히 이탤릭체로 디자인 처리 -->
+    <i></i>
+
+    <!-- 위를 나타내는 태그 -->
+    <sub></sub>
+    <!-- 아래를 나타내는 태그 -->
+    <sup></sup>
+
+
+    <!-- 순서가 없는 목록 / 이게 좀더 많이 씀-->
+    <ul></ul>
+    <!-- 순서가 있는 목록 -->
+    <ol></ol>
+
+    <!-- 표셀 -->
+    <table border="1">
+        <tr>
+            <!-- 행의 제목 -->
+            <th>제목1</th>
+            <th>제목2</th>
+        </tr>
+        <tr>
+            <!-- 행의 내용 -->
+            <td>내용1</td>
+            <td>내용2</td>
+        </tr>
+    </table>
+
+    <img src="이미지 파일 경로" alt="대체 텍스트/이미지 설명">
+
+    <!-- html5에 추가된 -->
+    <audio src="오디오 파일 경로" controls></audio>
+    <!-- 지원하지않는 브라우저일때 사용 -->
+    <audio src="오디오 파일 경로" controls autoplay>
+        <source src="오디오 파일 경로" type="audio/mpeg">
+    </audio>
+
+    <!-- 동영상-->
+    <video src="비디오 파일 경로" autoplay=""></video>
+
+    <!-- 유저에게 데이터를 받아야할 때 사용하는 태그 -->
+    <form action="서버 url" method="get or post / 어떤 방식으로 전달을 할지">
+        <!-- 기본값으로 value를 1로 설정함 -->
+        <label for="username">사용자 이름:</label>
+        <input type="text" id="username" name="username" value="1">
+
+        <!-- 타입을 submut으로 지정했기 때문에 버튼 형식으로 변형 -->
+        <!-- type : rdio, chackbox, passward 등등-->
+        <input type="submit" value="제출">
+    </form>
+
+    <!-- 코드를 테스트 하고 싶을 때 코드팬 이라는 사이트 참고 -->
+
+    <!-- 드롭다운 -->
+    <select>
+        <option value="option1">옵션 1</option>
+        <option value="option2">옵션 2</option>
+        <option value="option3">옵션 3</option>
+    </select>
+
+
+    <!-- 긴글을 입력받아야할 때 -->
+    <textarea rows="4" cols="50">
+    긴 글을 여기에 입력하세요...
+    </textarea>
+
+    <!-- 버튼 태그 -->
+    <button>클릭 me</button>
+    <input type="button" value="클릭 me">
+
+    <!-- 자바스크립트를 위한 어트리뷰트 -->
+    <!-- 기본이 sumit이기 때문에 버튼 -->
+    <button type="button" onclick="alert('버튼이 클릭되었습니다!')">클릭 me</button>
+
+    <!-- div 대신 의미를 정확하게 해주기위해 section으로 나눠주면 좋음 -->
+
+    <!-- 파일경로설정 -->
+    <a href="https://www.naver.com" target="_blank" rel="noopener noreferrer">네이버로 이동</a>
+    <!-- target-"_blank"로 설정해주면 좋음 -->
+    <!-- nooopenr noreferrer 공격 방어 -->
+</body>
+</html>

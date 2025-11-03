@@ -1,0 +1,262 @@
+
+
+:root {
+  /* 유지보수도 편함 */
+  --main-gray-color: #f5f5f5;
+  /* heading, subheading style이 재사용될 것 같으니 변수로 뺴볼까? */
+  --section-heading-font-color: #1e1e1e;
+  --section-heading-font-size: 24px;
+  --section-heading-font-weight: 600;
+  --section-subheading-font-color: #757575;
+  --section-subheading-font-size: 20px;
+  --section-subheading-font-weight: 400;
+}
+
+
+/* header css */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+}
+
+.page-header > a > img {
+  width: 40px;
+  height: 40px;
+}
+
+.page-header > .nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.primary-nav {
+  margin-right: 20px;
+}
+
+.primary-nav > ul {
+  display: flex;
+}
+
+.primary-nav > ul > li {
+  padding: 8px 10px;
+  /* background-color: #f5f5f5; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.primary-nav > ul > li:not(:last-child) {
+  margin-right: 8px;
+}
+
+.primary-nav > ul > li:first-child {
+  background-color: #f5f5f5;
+}
+
+.account-nav > ul {
+  display: flex;
+}
+
+.account-nav > ul > li {
+  padding: 8px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.account-nav > ul > li:first-child {
+  margin-right: 8px;
+  border: 1px solid #767676;
+  background-color: #e3e3e3;
+}
+
+.account-nav > ul > li:last-child {
+  margin-right: 8px;
+  border: 1px solid #2c2c2c;
+  background-color: #2c2c2c;
+  color: #f5f5f5;
+}
+
+
+
+
+
+
+.banner-section {
+  background-color: var(--main-gray-color); /* 이렇게 변수로도 사용 가능! */
+  height: 452px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.banner-section > h1 {
+  font-weight: 700;
+  font-size: 50px;
+}
+.banner-section > h3 {
+  color: #757575;
+  font-size: 20px;
+}
+
+/* main css - best imgs section */
+
+.best-imgs-section {
+  padding: 64px;
+  display: flex;
+  gap: 15px;
+}
+
+.best-imgs-section > img {
+  /* 반응형을 위한 코드 */
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+
+
+
+
+
+
+
+.section-heading {
+  font-size: var(--section-heading-font-size);
+  font-weight: var(--section-heading-font-weight);
+  color: var(--section-heading-font-color);
+  margin-bottom: 8px;
+}
+
+.section-subheading {
+  font-size: var(--section-subheading-font-size);
+  font-weight: var(--section-subheading-font-weight);
+  color: var(--section-subheading-font-color);
+}
+
+/* 이것도 밑에 grid section에서 또 쓰일거 같으니 따로 공통 스타일로 빼두기 */
+.card-list-title {
+  font-size: var(--section-heading-font-size);
+  font-weight: var(--section-heading-font-weight);
+  color: var(--section-heading-font-color);
+  margin-bottom: 3px;
+}
+
+.card-list-desc {
+  font-size: 16px;
+  font-weight: var(--section-subheading-font-weight);
+  color: var(--section-subheading-font-color);
+  margin-bottom: 6px;
+}
+
+.card-list-section {
+  padding: 64px;
+}
+
+.card-list-container {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card-list-container > li {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  /* gap을 통해 편하게 여백을 지정할 수 있다 */
+  gap: 15px;
+}
+
+.card-list-container > li > img {
+  aspect-ratio: 1/1; /* 최신 1:1 이미지 종횡비 유지하는법*/
+  max-width: 160px;
+  /* 
+    이미지가 늘어나거나 하면 좀 잘라서 맞게 해줌 
+  */
+  object-fit: cover;
+
+  /* 반응형을 고려한다면 */
+  flex: 1 1 0;
+  min-width: 100px;
+}
+
+.card-list-container > li button {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: #e3e3e3;
+  border: 1px solid #767676;
+  font-size: 16px;
+  width: 75px;
+}
+
+/* main css - card grid list section */
+/* 지금은 대충 card grid list처럼 네이밍 짓고 있지만
+원래는 각 section마다의 주제를 가지고 클래스명을 지으면 됩니다 */
+
+.card-grid-list-section {
+  padding: 64px;
+}
+
+.card-grid-list-container {
+  margin-top: 45px;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card-grid-list-container > li {
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+}
+
+.card-grid-list-container > li > img {
+  aspect-ratio: 1/1; /* 최신 1:1 이미지 종횡비 유지하는법*/
+  max-width: 160px;
+  object-fit: cover;
+  margin-bottom: 18px;
+}
+
+
+/* footer css */
+
+.page-footer {
+  padding: 32px;
+  display: flex;
+  gap: 6px;
+}
+
+.footer-inner-container {
+  flex: 1 1 0;
+}
+
+.footer-inner-container > .footer-logo {
+  width: 30px;
+}
+
+.footer-inner-container > .footer-sns-logos {
+  display: flex;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.footer-inner-container > .footer-sns-logos > img {
+  width: 23px;
+}
+
+.footer-inner-container > strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer-inner-container > ul {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
