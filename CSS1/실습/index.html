@@ -18,47 +18,38 @@
     .bg-wrap {
       /* 전체화면 */
       width: 100%;
-      /* 화면 높이 전체 */
-      height: 100vh;
       /* 이미지 최소 높이 맞추기 */
       min-height: 600px;
-      /* 이미지 반복 금지 */
-      background-size: cover;
-      /* 이미지 중앙정렬 */
-      background-position: center;
+      /* 블필요한 부분 삭제 */
+      overflow: hidden;
     }
 
-    .parallax {
+    .bg-wrap.parallax {
       /* 배경 이미지 지정 */
-      background-image: url('http://poiemaweb.com/img/bg/stock-photo-125979219.jpg');
-      /* 스크롤 시 배경고정 */
-      background-attachment: fixed;
+      background: url('http://poiemaweb.com/img/bg/stock-photo-125979219.jpg') 
+      no-repeat center/cover fixed;
+      /* 배경 고정 : fixed */
+    }
+
+    .bg-wrap.normal {
+      /* 배경 이미지 지정 */
+      background: url('http://poiemaweb.com/img/bg/stock-photo-155153867.jpg')
+      no-repeat center/cover;
     }
 
     #page-wrap{
+      /* 중앙정렬 */
+      margin: 50px auto;
       /* 배경색 흰색 */
       background-color: #fff;
       /* 안쪽 여백 */
       padding: 30px;
       /* 너비 400px */
       width: 400px;
-      /* 높이 자동 */
-      height: auto;
-      /* 중앙정렬 */
-      margin: 0 auto;
       /* 그림자 효과 */
       box-shadow: 0 0 20px black;
       /* 글자 폰트 설정 */
       font: 15px/2 Georgia, Serif;
-      /* 약간 아래로 위치 이동 */
-      position: relative;
-      /* 바깥 위 여백 50px 아래로 이동 */
-      top:50px;
-    }
-
-    .normal {
-      /* 배경 이미지 지정 */
-      background-image: url('http://poiemaweb.com/img/bg/stock-photo-155153867.jpg');
     }
   </style>
 </head>
