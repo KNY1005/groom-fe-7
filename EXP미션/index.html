@@ -6,50 +6,111 @@
   <title>간단자기소개사이트</title>
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./style.css">
+  <!-- CDN : Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-  <header role="rowheader">
+  <header role="rowheader" >
     <nav>
-      <ul>
-        <li><a href="https://na-ong-iee.tistory.com/" alt="김나영-블로그">Blog</a></li>
-        <li><a href="https://github.com/KNY1005" alt="김나영-깃허브">GitHud</a></li>
-        <li><a href="./index.html" alt="여긴뭐하지"></a>Contact</li>
+      <ul class="nav-ul">
+        <li><a href="https://na-ong-iee.tistory.com/" alt="김나영-블로그" target="_blank" rel="noopener noreferrer">Blog</a></li>
+        <li><a href="https://github.com/KNY1005" alt="김나영-깃허브" target="_blank" rel="noopener noreferrer">GitHud</a></li>
+        <li><a href="./index.html" alt="여긴뭐하지">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section>
-      <img src="./스크린샷 2025-02-28 오후 5.49.57.png alt=" alt="mandoo">
+    <section class="forme">
+      <img src="./스크린샷 2025-02-28 오후 5.49.57.png" alt="mandoo">
       <h1>About Me</h1>
-      <p>안녕하세요 저는 김나영입니다.</p>
+      <p>안녕하세요 저는 만두입니다.</p>
     </section>
 
-    <section>
-      <lu role="list">
+    <section class="card-list">
+      <h1>Portfolio</h1>
+      <ul role="list" class="card-list-ul">
         <li class="project-card">
           <h2 >Project Title</h2>
           <p>Description of project</p>
-          <ul>
+          <ul class="stack-bar">
             <li><span></span>Tech 1</li>
             <li><span></span>Tech 2</li>
             <li><span></span>Tech 3</li>
           </ul>
-          <div>
-            <a href="https://github.com/KNY1005" alt="김나영-깃허브-플젝1"><input type="button" value="GitHud" tabindex></a>
-            <a href="https://github.com/KNY1005" alt="김나영-깃허브(임시)"><input type="button" value="Demo" tabindex></a>
+          <div class="card-list-button-list">
+            <a class="card-list-button" href="https://github.com/KNY1005" alt="김나영-깃허브-플젝1"  target="_blank" rel="noopener noreferrer" >GitHud</a>
+            <a class="card-list-button" href="https://github.com/KNY1005" alt="김나영-깃허브(임시)"  target="_blank" rel="noopener noreferrer" >Demo</a>
+          </div>
+        </li>
+        <li class="project-card">
+          <h2 >Project Title</h2>
+          <p>Description of project</p>
+          <ul class="stack-bar">
+            <li><span></span>Tech 1</li>
+            <li><span></span>Tech 2</li>
+            <li><span></span>Tech 3</li>
+          </ul>
+          <div class="card-list-button-list">
+            <a class="card-list-button" href="https://github.com/KNY1005" alt="김나영-깃허브-플젝1"  target="_blank" rel="noopener noreferrer" >GitHud</a>
+            <a class="card-list-button" href="https://github.com/KNY1005" alt="김나영-깃허브(임시)"  target="_blank" rel="noopener noreferrer" >Demo</a>
+          </div>
+        </li>
+        <li class="project-card">
+          <h2 >Project Title</h2>
+          <p>Description of project</p>
+          <ul class="stack-bar">
+            <li><span></span>Tech 1</li>
+            <li><span></span>Tech 2</li>
+            <li><span></span>Tech 3</li>
+          </ul>
+          <div class="card-list-button-list">
+            <button type="button" class="btn btn-info">부트스트랩 버튼</button>
+            <a class="card-list-button" href="https://github.com/KNY1005" alt="김나영-깃허브-플젝1"  target="_blank" rel="noopener noreferrer" >GitHud</a>
+            <a class="card-list-button" href="https://github.com/KNY1005" alt="김나영-깃허브(임시)"  target="_blank" rel="noopener noreferrer" >Demo</a>
           </div>
         </li>
       </ul>
+
+      <table class="table-css">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>John</td>
+            <td>Doe</td>
+            <td>@social</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </main>
   
   <footer role="rowheader">
     <nav>
-      <ul>
-        <li><a href="https://na-ong-iee.tistory.com/" alt="김나영-블로그">Blog</a></li>
-        <li><a href="https://github.com/KNY1005" alt="김나영-깃허브">GitHud</a></li>
-        <li><a href="./index.html" alt="여긴뭐하지"></a>Contact</li>
+      <ul class="nav-ul">
+        <li><a href="https://na-ong-iee.tistory.com/" alt="김나영-블로그" target="_blank" rel="noopener noreferrer">Blog</a></li>
+        <li><a href="https://github.com/KNY1005" alt="김나영-깃허브" target="_blank" rel="noopener noreferrer">GitHud</a></li>
+        <li><a href="./index.html" alt="여긴뭐하지">Contact</a></li>
       </ul>
     </nav>
   </footer>

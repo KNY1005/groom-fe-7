@@ -1,0 +1,240 @@
+@charset "utf-8";
+
+body{
+  /* 전체 사이즈 */
+  width: 1000px;
+
+  /* 테두리 css */
+  border: 5px solid #a6a6a6;
+  border-radius: 20px;
+  margin: 10px auto;
+}
+
+/* header */
+header > nav{
+  /* background-color: aqua; */
+  width: 100%;
+  height: 100px;
+  border-bottom: 5px solid #a6a6a6;
+}
+
+header > nav > .nav-ul{
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+  gap: 50px;
+  padding:30px;
+  align-items: center;
+}
+
+.nav-ul > li{
+  font-size: 30px;
+  font-weight: bold;
+  color: #a6a6a6;
+  transition: all 0.5s  ease;
+}
+
+.nav-ul > li:hover{
+  color: #4d4b4b;
+}
+
+
+/* main */
+.forme{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+}
+.forme > img{
+  /* background-color: #4d4b4b; */
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  margin: 20px;
+  /* 이미지 사이즈 비율 맞추기 */
+  object-fit: cover;
+}
+
+.forme h1{
+  font-size: 50px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.forme p{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* 포트폴리오 카드*/
+.card-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.card-list > h1{
+  font-size: 50px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.card-list-ul > li{
+  /* background-color: rgb(0, 255, 38); */
+  padding: 30px;
+  width: 800px;
+  border-radius: 20px;
+  border: 5px solid #a6a6a6;
+  margin: 20px;
+  transition: all 0.5s ease;
+}
+
+.card-list-ul > li:hover{
+  box-shadow: 0 5px 8px 0.5px #a6a6a6;
+  
+}
+
+.project-card h2{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.project-card p{
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.stack-bar li{
+  margin: 10px 0 10px 0;
+  display: flex;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+  height:20px;
+}
+
+.stack-bar > li > span{
+  display:inline-block;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+/* 1번 카드 */
+.card-list-ul > li:nth-child(1) li:nth-child(1) > span{
+  background-color: #ffb9b9;
+  width: 70%;
+  height: 20px;
+}
+
+.card-list-ul > li:nth-child(1) li:nth-child(2) > span{
+  background-color: #b5c6ff;
+  width: 20%;
+  height: 20px;
+}
+
+.card-list-ul > li:nth-child(1) li:nth-child(3) > span{
+  background-color: #a6fffc;
+  width: 50%;
+  height: 20px;
+}
+
+/* 2번 카드 */
+.card-list-ul > li:nth-child(2) li:nth-child(1) > span{
+  background-color: #ffb9b9;
+  width: 60%;
+  height: 20px;
+}
+
+.card-list-ul > li:nth-child(2) li:nth-child(2) > span{
+  background-color: #b5c6ff;
+  width: 80%;
+  height: 20px;
+}
+
+.card-list-ul > li:nth-child(2) li:nth-child(3) > span{
+  background-color: #a6fffc;
+  width: 10%;
+  height: 20px;
+}
+
+/* 3번 카드 */
+.card-list-ul > li:nth-child(3) li:nth-child(1) > span{
+  background-color: #ffb9b9;
+  width: 30%;
+  height: 20px;
+}
+
+.card-list-ul > li:nth-child(3) li:nth-child(2) > span{
+  background-color: #b5c6ff;
+  width: 20%;
+  height: 20px;
+}
+
+.card-list-ul > li:nth-child(3) li:nth-child(3) > span{
+  background-color: #a6fffc;
+  width: 17%;
+  height: 20px;
+}
+/* 버튼 */
+.card-list-button-list{
+  display: flex;
+  align-items: center; 
+  gap: 20px;
+}
+
+.card-list-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background: #e1e1e1;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  border: 5px solid #a6a6a6;
+  transition: all 0.5s ease;
+}
+
+.card-list-button:hover{
+  background: #c1c1c1;
+  box-shadow: 0 5px 8px 0.5px #a6a6a6;
+}
+
+
+/* 표 */
+.table-css{
+  width: 800px;
+  height: 100px;
+  border: 5px solid #f55f5f;
+  background-color: #ffe3e3;
+  transition: all 0.5s ease;
+}
+
+.table-css:hover{
+  background-color: #97e3f0;
+}
+
+/* foorter */
+footer > nav{
+  width: 100%;
+  height: 100px;
+  border-top: 5px solid #a6a6a6;
+}
+
+footer > nav > .nav-ul{
+  display: flex;
+  justify-content: center;
+
+  height: 100%;
+  gap: 100px;
+  padding:30px;
+  align-items: center;
+}
