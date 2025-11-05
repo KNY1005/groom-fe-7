@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+/* 전체 컨테이너 */
+.container {
+  /* 화면 전체 채우기 */
+  height: 100vh;
+  text-align: center;
+  background-color: #e74c3c;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 로더 박스 */
+.loader4 {
+  position: absolute;
+  width: 150px;
+  height: 20px;
+
+  /* 화면 중앙 정렬 */
+  top: calc(50% - 10px);
+  left: calc(50% - 75px);
+
+  background-color: rgba(255, 255, 255, 0.2);
+  
+}
+
+/* .box호버시 .loader4-text이동 */
+/* 상위 속성 호버시만 하위속성 이동가능 */
+.box:hover .loader4-text {
+  /* 아래로 내려오며 보이기 */
+  transform: translateY(0);
+  /* 점점 보이게 */
+  opacity: 1;
+  transition:transform 0.8s ease,opacity 0.8s ease;
+}
+
+/* .box 하위속성 p클래스 지정 */
+.loader4-text {
+  width: 100%;
+  height: 20px;
+  background: #fff;
+  position: absolute;
+  /* 화면 아래쪽에 위치 고정 */
+  bottom: 0;
+  /* 위로 숨김 (위쪽에서 내려오게 보이도록 설정) */
+  transform: translateY(-50px);
+  /* 처음엔 안보이게 */
+  opacity: 0;
+  /* 부드럽게 이동 */
+  transition:
+    transform 0.8s ease, opacity 0.8s ease, visibility 0s 0.8s;
+  /* 애니메이션 성능 최적화 */
+  will-change: transform, opacity;
+}
+
+/* ::before란 가상 요소를 사용하여 애니메이션 효과를 줍니다 */
+.loader4::before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+
+  /* 애니매이션 시작 기준점 */
+  transform-origin: 0% 100%;
+
+  /* 위치/크기 */
+  left: 0;
+  width: 100%;
+  height: 20px;
+
+  /* 애니메이션 이름 */
+  animation-name: move;
+  /* 애니메이션 작동 시간 */
+  animation-duration: 4s;
+  /* 애니메이션 재생 횟수 / 반복 */
+  animation-iteration-count: infinite;
+  /* 속도가 점점 느려졌다가 빨라지는 형태 */
+  animation-timing-function: ease-in-out;
+
+  /* 애니메이션 떨림 최적화 */
+  will-change: transform, opacity;
+}
+
+/* 로딩바 애니메이션 */
+@keyframes move {
+  0% {
+    /* 처음은 0에서 시작 */
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  50% {
+    /* 점점 차오르게 */
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    /* 끝까지 도달하면 서서히 사라짐 */
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+/* 로딩바 텍스트 */
+.loader4::after {
+  content: "LOADING ...";
+  color: #fff;
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  left: 0;
+  top: 0;
+}

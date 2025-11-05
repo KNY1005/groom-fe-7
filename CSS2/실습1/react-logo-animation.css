@@ -1,0 +1,21 @@
+
+.logo-spin{
+  animation: logo-spin 20s linear infinite;
+  transition: filter 0.3s;
+}
+
+.logo-spin:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+filter:logo-spin{
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

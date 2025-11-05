@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>[BASE] 산만한 가격표 – 디자인 토큰 적용</title>
+  <style>
+    /* ===============================
+       🎨 1. 디자인 토큰 (Design Tokens)
+       =============================== */
+    :root {
+      /* 색상 */
+      --color-bg-dark: #0b1220;
+      --color-bg-light: #ffffff;
+      --color-text-dark: #cfd3dc;
+      --color-text-light: #0b1220;
+      --color-accent: #1e3a8a;
+      --color-accent-bright: #3b82f6;
+      --color-border-dark: #1d2635;
+      --color-border-light: #e6e8ef;
+      --color-muted-dark: #95a0b3;
+      --color-muted-light: #4d5a6e;
+      --color-badge: #f87171;
+
+      /* 폰트 */
+      --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+      --font-size-base: 14px;
+      --font-size-title: 18px;
+      --font-size-price: 28px;
+
+      /* 간격 (Spacing) */
+      --space-xs: 4px;
+      --space-s: 8px;
+      --space-m: 12px;
+      --space-l: 16px;
+      --space-xl: 26px;
+      --space-section: 40px;
+
+      /* 모서리 (Radius) */
+      --radius-s: 6px;
+      --radius-m: 10px;
+      --radius-l: 12px;
+    }
+
+    /* 테마 변수 매핑 */
+    html[data-theme="dark"] {
+      --color-bg: var(--color-bg-dark);
+      --color-text: var(--color-text-dark);
+      --color-border: var(--color-border-dark);
+      --color-muted: var(--color-muted-dark);
+    }
+    html[data-theme="light"] {
+      --color-bg: var(--color-bg-light);
+      --color-text: var(--color-text-light);
+      --color-border: var(--color-border-light);
+      --color-muted: var(--color-muted-light);
+    }
+
+    /* ===============================
+       🧱 2. 기본 전역 스타일
+       =============================== */
+    html {
+      font-size: var(--font-size-base);
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-family-base);
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    /* ===============================
+       🔘 3. 버튼 (전역 규칙)
+       =============================== */
+    .btn {
+      background: var(--color-accent-bright) !important;
+      color: #fff !important;
+      border: 0;
+      padding: var(--space-s) var(--space-m);
+      border-radius: var(--radius-m);
+      cursor: pointer;
+    }
+
+    /* ===============================
+       🧭 4. 헤더
+       =============================== */
+    .header {
+      position: sticky;
+      top: 0;
+      background: color-mix(in srgb, var(--color-bg) 90%, transparent);
+      color: var(--color-muted);
+      padding: var(--space-s) var(--space-m);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .header .right {
+      float: right;
+    }
+    .header .btn-ghost {
+      background: transparent;
+      color: inherit;
+      border: 1px solid var(--color-border);
+      padding: var(--space-s) var(--space-m);
+      border-radius: var(--radius-m);
+    }
+
+    /* ===============================
+       💳 5. 가격표 섹션
+       =============================== */
+    .pricing {
+      max-width: 1100px;
+      margin: var(--space-section) auto calc(var(--space-section) + var(--space-l));
+    }
+    .row {
+      font-size: 0;
+    }
+    .plan {
+      display: inline-block;
+      vertical-align: top;
+      width: 32%;
+      margin: 0 1%;
+      font-size: 1rem;
+      background: color-mix(in srgb, var(--color-bg) 95%, black);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-l);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .plan h3 {
+      margin: var(--space-l);
+      margin-bottom: var(--space-s);
+      font-size: var(--font-size-title);
+      color: var(--color-muted);
+    }
+    .plan .price {
+      margin: 0 var(--space-l) var(--space-m) var(--space-l);
+      font-size: var(--font-size-price);
+      color: color-mix(in srgb, var(--color-text) 80%, white);
+    }
+    .plan .desc {
+      margin: 0 var(--space-l) var(--space-m) var(--space-l);
+      color: color-mix(in srgb, var(--color-muted) 85%, var(--color-text));
+      line-height: 1.3;
+    }
+    .plan .features {
+      margin: var(--space-m) var(--space-l) var(--space-l) var(--space-l);
+      color: color-mix(in srgb, var(--color-muted) 90%, var(--color-text));
+    }
+    .plan .features li {
+      margin: var(--space-s) 0;
+    }
+
+    /* CTA */
+    .plan .cta {
+      margin: var(--space-l);
+    }
+    .plan .cta .btn {
+      width: 100%;
+    }
+
+    /* Pro 카드 (특이성 예시 유지) */
+    #pro {
+      border-color: var(--color-accent-bright);
+      background: #0c1528; /* inline style과 동일한 결과 유지 */
+      padding-bottom: var(--space-xl);
+    }
+    #pro h3 {
+      color: #b6cfff !important;
+    }
+    #pro .price {
+      font-size: calc(var(--font-size-price) + 2px);
+    }
+    #pro .desc {
+      line-height: 1.1;
+    }
+
+    /* 뱃지 */
+    .badge {
+      position: absolute;
+      top: -10px;
+      right: -6px;
+      background: var(--color-badge);
+      color: #fff;
+      padding: var(--space-xs) var(--space-m);
+      border-radius: 999px;
+      font-size: 12px;
+    }
+
+    /* 라이트 테마 일부 수정 */
+    html[data-theme="light"] .plan h3 {
+      color: #7b8aa1;
+    }
+    html[data-theme="light"] .plan .desc {
+      color: #8ea0b5;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <strong>봄맞이 프로모션</strong>
+    <span class="right">
+      <button id="theme" class="btn-ghost">🌓 테마</button>
+    </span>
+  </div>
+
+  <main class="pricing">
+    <div class="row">
+      <section class="plan" id="basic">
+        <span class="badge">-20%</span>
+        <h3>Basic</h3>
+        <p class="price">₩9,900</p>
+        <p class="desc">개인/취미용. 소규모 프로젝트에 적합.</p>
+        <ul class="features">
+          <li>월 1GB 트래픽</li>
+          <li>커뮤니티 지원</li>
+        </ul>
+        <div class="cta">
+          <button class="btn">지금 시작</button>
+        </div>
+      </section>
+
+      <section class="plan" id="pro">
+        <span class="badge" style="right:-12px; top:-14px">인기</span>
+        <h3>Pro</h3>
+        <p class="price">₩19,900</p>
+        <p class="desc">팀 협업, 대시보드 제작에 추천.</p>
+        <ul class="features">
+          <li>월 10GB 트래픽</li>
+          <li>이메일 지원</li>
+          <li>애널리틱스</li>
+        </ul>
+        <div class="cta">
+          <button class="btn" style="border-radius:var(--radius-s)">업그레이드</button>
+        </div>
+      </section>
+
+      <section class="plan" id="business">
+        <span class="badge">-30%</span>
+        <h3>Business</h3>
+        <p class="price">₩49,900</p>
+        <p class="desc">기업/고트래픽 서비스용. SLA 포함.</p>
+        <ul class="features">
+          <li>무제한 트래픽</li>
+          <li>우선 지원</li>
