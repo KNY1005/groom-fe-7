@@ -32,11 +32,13 @@ body {
   border-radius: 50%;
 
   /* 이곳을 채워주세요. hint) animation */
+  animation: spinner 0.6s linear infinite;
+    
 }
 
 .btn.loading {
   /* 이곳을 채워주세요. hint) transform */
-
+  transform: translateY(4px);
   box-shadow: 0 4px 0 #a8df8e, 0 4px 4px;
 }
 
@@ -50,4 +52,10 @@ body {
 
 @keyframes spinner {
   /* 이곳을 채워주세요. hint) tranform 360도 돌아가게 */
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
