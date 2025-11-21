@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+
+    //컨스트럭쳐는 1개만 존재 가능
+//   class person{
+//     // 정해둔 값은 컨스트럭쳐 밖에 생성 해도됌
+//     //미리 정의해둔 필드
+//     height = 100;
+
+//   constructor({name, age}){
+//     this.name = name;
+//     this.age =age;
+//   }
+//   //method = 함수
+//   Introduce(){
+//     return `안녕하세요, 제 이름은 ${this.name}입니다`
+//   };
+// }
+
+// //얼음틀을 만들었으니 물을 부어줄 차례!
+// //person = 인스턴스 = 그릇
+// const person = new person({
+//   name : "Madoo", age : 2
+// })
+
+// //얼음틀에 물을 부어준 것
+// //얘가 실세!
+
+// console.log(person)
+// console.log(person.Introduce())
+
+
+    // class Calcuator{
+    //   add(x, t){
+    //     return x + y
+    //   }
+    //   subtract(x, y){
+    //     return x -y
+    //   }
+    // }
+
+    // let calc = new Calcuator
+
+    // console.log(calc.add(1, 2))
+
+
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+    //private 메서드
+    //함수를 보호한다
+
+    //기존 클래스에서 상속이 가능하다는 것
+    // ✅ private을 사용하지 않았을 때
+    // class myClass {
+    //     // private 변수만 만들어 준거지 #이걸 붙이면 그냥 나타내는것 private하지 않다
+    //     #num = 100
+        
+    //     // public 메서드
+    //     privMethod(){
+    //         console.log(this.#num); // 프라이빗 변수 호출 /100
+    //     }
+        
+    //     publicMethod() {
+    //         this.privMethod(); // public 메소드 호출 / 100
+    //     }    
+    // }
+    
+    // let newClass1 = new myClass();
+
+
+
+
+
+    // ✅ private을 사용하지 않은 메서드이기 때문에 인스턴스를 통해 호출 가능
+    // newClass.publicMethod() // 100
+    // newClass.privMethod() // 100
+
+    // // private을 사용할 때
+    // class myClass {
+    //     // private 변수
+    //     #num = 100
+        
+    //     // private 메서드
+    //     #privMethod(){
+    //         console.log(this.#num); // 프라이빗 변수 호출
+    //     }
+        
+    //     publicMethod() {
+    //         this.#privMethod(); // 프라이빗 메소드 호출
+    //     }    
+    // }
+    
+    // let newClass = new myClass();
+
+    // // public메서드는 호출 가능, private 메서드는 호출 불가(접근할 수 없음)
+    // newClass.publicMethod() // 100
+    // newClass.privMethod() // TypeError: newClass.privMethod is not a function
+
+    
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+    //객체 지향 프로그래밍(OOP)
+  // 객체를 인원 수 만큼 생성 할 수 는 없으니까
+  // 이 객체를 계속 찍어 낼 수 있게 만드는 것
+  // 
+
+  // 플레이어 팩토리를 만들어주고
+  // class Player {
+  //   // 클래스에 들어가는 함수를 메서드 라고 합니다
+  //   // constructor 가 인스턴스를 생성하기 위한 메서드였죠
+
+  //   // 컨스트럭쳐를 통해 4가지 받아온다
+  //   constructor(name, age, health, skill) {
+  //     this.name = name;
+  //     this.age = age;
+  //     this.health = health;
+  //     this.skill = skill;
+  //     this.xp = 0; // 경험치 속성 1만번 추가할 필요 없음
+  //   }
+  //   playerHeal() {
+  //     this.health = 100
+  //   }
+  //   playerTakeHit() {
+  //     this.health = this.health - 5
+  //   }
+  // }
+
+  // //이제 데이터만 넣어주면 
+  // // 편하게 갖다 씁니다, 이제 코드 복사할 필요 없음
+  // const mandoo = new Player("mandoo", 2, 99, "발라당 스킬")
+  // mandoo.playerTakeHit()
+  // console.log(mandoo)
+  // mandoo.playerHeal()
+  // console.log(mandoo)
+  // const gogiMandoo = new Player("gogi-mandoo", 1, 100, "만두 깨물기 스킬")
+
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+  //상속
+
+  // class Human {
+  //   constructor(name) {
+  //     this.name = name;
+  //     this.arms = 2;
+  //     this.legs = 2;
+  //   }
+  // }
+
+  // // extends 키워드를 통해 Human의 속성을 전부 가지면서 그들만의 데이터를 넣어 확장하는 것
+  // class Baby extends Human {
+  //   constructor(name) {
+  //     super(name)
+  //     this.cute = true;
+  //   }
+  //   cry() {
+  //     return "응애"
+  //   }
+  // }
+
+  // class Teenager extends Human {
+  //   constructor(name) {
+  //     super(name)
+  //     this.emotional = true;
+  //   }
+  //   study() {
+  //     return "열공중"
+  //   }
+  // }
+
+  // const mandooBaby = new Baby("mandoo")
+  // console.log(mandooBaby) // Baby {name: 'mandoo', arms: 2, legs: 2, cute: true}
+
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+  // class ArrayAbstracition {
+  //   #items;
+    
+  //   constructor() {
+  //     this.#items = []
+  //   }
+    
+  //   // 이 메서드들이 items라는 private변수를 편하게 조종할 수 있는 노출된 인터페이스임
+  //   // 즉, 이 메서드가 밖에서 접근하여 내부 items를 조종할 수 있다
+  //   getItems() {
+  //     return [...this.#items]
+  //   }
+    
+  //   addItems(item) {
+  //     return this.#items.push(item)
+  //   }
+  // }
+
+  // const result = new ArrayAbstracition()
+
+  // // 배열에 어떻게 값을 추가하는지 즉, push()를 몰라도 addItems()만 사용하면 배열에 추가할 수 있다
+  // // 즉, ArrayAbstracition의 인터페이스를 만든 것이다
+  // result.addItems("HI")
+  // result.addItems("BYE")
+
+  // console.log(result.getItems())
+
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+  
+  //같은 자료형을 리턴해주는게 다형성이다
+  //캡슐화 상속 다형성 추상화 키워드
+  // class Person {
+  //   sayHi() {
+  //     console.log("HIIII")
+  //   }
+  //   sayBye() {
+  //     console.log("BYEEEE")
+  //   }
+  // }
+
+  // //메서드 오버라이드 / 오버라이드 = 다시 썼다, 덮어썼다
+  // class Korean extends Person {
+  //   sayHi() {
+  //     console.log("안녕, 나는 한국인이야.")
+  //     return `안녕, 나는 한국인이야.`
+  //   }
+  // }
+
+  // // Korean, American 두 인스턴스는 Person 클래스를 상속 받았죠
+  // // 즉, 두 인스턴스 모두 sayHi(), sayBye() 메서드를 갖는다는 뜻
+  // class American extends Person {}
+
+  // const 한국인 = new Korean()
+  // const 미국인 = new American()
+
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+  // User 클래스를 만들고, name과 age를 프로퍼티로 가지게 해주세요.
+  // 그리고 introduce() 메서드를 만들어 
+  // "안녕하세요, 저는 ${name}이고, ${age}살입니다." 를 출력하게 해주세요.
+  // 예시 출력
+  //const user = new User("mandoo", 2);
+
+  // class user{
+  //   construtor(name, age){
+  //     this.name = name;
+  //     this.age = age;
+  //   }
+  //   introduce(){
+  //     console.log("안녕하세요, 저는 $(name)이고, $(age)입니다." )
+  //   }
+  // }
+  // user.introduce();
+  // "안녕하세요, 저는 mandoo이고, 2살입니다."
+
+
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+//부모 클래스 Employee는 name과 salary를 가집니다.
+// 이를 상속받는 Manager 클래스는 department를 추가하고,
+// getInfo() 메서드로 "홍길동 (인사팀) - 연봉 5000만원" 형식으로 출력하도록 하세요.
+// class Employee{
+//   constructor(name, salary){
+//     this.name = name;
+//     this.salary = salary; 
+//   }
+// }
+
+// class Manager extends mployee{
+//   constructor(name, salary, depertmant){
+//     super(name, salary);
+//     this.depertmant = depertmant;
+//   }
+// }
+
+// getInfo(){
+//   console.log(`${this.name} (${this.depertmant}) - 연봉 $(this.de)만원`)
+// }
+// const manager = new Manager("홍길동", 5000, "인사팀");
+// manager.getInfo(); // 홍길동 (인사팀) - 연봉 5000만원
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+// products 배열의 각 상품에 대해 20% 할인된 가격을 적용한 새로운 상품 배열을 만드세요. 
+// 단, 브랜드와 상품명은 그대로 유지하고, spread 문법을 사용해 주세요.
+  const products = [
+    {
+      브랜드: "수아레",
+      상품명: "케이블 카라 반팔 니트 - 6 Color",
+      가격: 39900,
+    },
+    {
+      브랜드: "커버낫",
+      상품명: "에센셜 어쩌고",
+      가격: 34300,
+    },
+  ];
+
+  // 여기에 코드를 작성하세요
+  const newProducts = products.map(product => {
+    const sexyPrice = Math.round(product.price * 0.8);
+    return { ...product, price: sexyPrice };
+  });
+
+  console.log(newProducts);
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+//아래 board 객체에 게시글을 추가, 삭제, 조회하는 메서드를 구현하여 게시판 시스템을 만들어주세요.
+const board = {
+  
+  posts: [],
+
+  // 여기에 addPost, removePost, showPosts 메서드를 추가하세요.
+    addPost(post) {
+      this.posts.push(post);
+    },
+
+    removePost(index) {
+      const idx = index - 1;
+      if (idx < 0 || idx >= this.posts.length) {
+        console.log("해당 게시글이 없습니다.");
+        return;
+      }
+      const [removed] = this.posts.splice(idx, 1);
+      console.log(`게시글 삭제: ${removed}`);
+    },
+
+    showPosts() {
+      console.log("현재 게시글 목록:");
+      if (this.posts.length === 0) {
+        console.log("게시글이 없습니다.");
+        return;
+      }
+      this.posts.forEach((p, i) => {
+        console.log(`${i + 1}. ${p}`);
+      });
+    }
+};
+
+// 실행 예시
+board.addPost("오늘의 점심은 김치찌개!");
+board.addPost("자바스크립트 공부 중 🖥️");
+
+board.showPosts(); 
+// 출력: 
+// 📌 현재 게시글 목록:
+// 1. 오늘의 점심은 김치찌개!
+// 2. 자바스크립트 공부 중 🖥️
+
+board.removePost(1);
+// 출력: 
+// 게시글 삭제: 오늘의 점심은 김치찌개!
+
+board.showPosts(); 
+// 출력: 
+// 📌 현재 게시글 목록:
+// 1. 자바스크립트 공부 중 🖥️
+
+</script>
+  
+</head>
+<body>
+  
+</body>
+</html>
+
