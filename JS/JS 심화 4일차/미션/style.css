@@ -23,11 +23,13 @@ main {
 .modal {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 0;
+  left: 0;
 }
 
 .modal > .modalInner {
@@ -96,4 +98,8 @@ a {
   cursor: pointer;
   font-size: 20px;
   font-weight: 500;
+}
+
+.images{
+  width: 300px;
 }
