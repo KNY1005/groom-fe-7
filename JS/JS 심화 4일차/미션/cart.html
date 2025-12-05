@@ -142,8 +142,8 @@
           return;
         }
 
-        // 처리 대상: 내부에 생성한 #clearCart 버튼 또는 index.html 등에 있는 .clearCart 버튼
-        const clearBtn = e.target.closest('#clearCart') || e.target.closest('.clearCart');
+        //index.html에 있는 .clearCart 버튼
+        const clearBtn = e.target.closest('.clearCart');
         if (clearBtn) {
           const cart = loadCart();
           if (!cart || cart.length === 0) {
@@ -160,21 +160,6 @@
         }
             });
 
-      
-      document.addEventListener('change', (e) => {
-        const input = e.target.closest('.qty');
-        if (!input) return;
-        const id = String(input.dataset.id);
-        let val = Number(input.value);
-        if (!Number.isFinite(val) || val < 1) val = 1;
-        const cart = loadCart();
-        const idx = cart.findIndex(i => String(i.id) === id);
-        if (idx > -1) {
-          cart[idx].count = val;
-          saveCart(cart);
-          renderCart();
-        }
-      });
 
       // 초기 렌더
       renderCart();

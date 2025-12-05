@@ -1,0 +1,32 @@
+.MemoContainer {
+  background-color: rgb(218, 218, 196);
+  flex: 1;
+}
+
+.MemoContainer__title {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2rem;
+}
+.MemoContainer__content {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  min-height: 600px;
+}
+
+.MemoContainer__empty {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.MemoContainer__empty > h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
